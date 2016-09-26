@@ -1,0 +1,15 @@
+<div class="component">
+  <md-list>
+    <md-list-item ng-repeat="alarm in $ctrl.alarmList" class="md-2-line" layout="row" layout-align="center center">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{alarm.name}}</h3>
+        <p>{{alarm.time | minToTime}}</p>
+      </div>
+      <md-switch ng-model="alarm.active" ng-change="$ctrl.updateAlarm(alarm)" aria-label="active">
+      </md-switch>
+      <md-button class="md-icon-button" ng-click="$ctrl.deleteAlarm(alarm._id)" aria-label="delete">
+          <md-icon md-svg-icon="md:delete"></md-icon>
+      </md-button>
+    </md-list-item>
+  </md-list>
+</div>
